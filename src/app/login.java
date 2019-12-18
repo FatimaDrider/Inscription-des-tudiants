@@ -231,7 +231,6 @@ OracleResultSet rs = null;
         jLabel7.setBounds(380, 140, 80, 23);
 
         password.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        password.setText("jPasswordField1");
         password.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -253,7 +252,7 @@ OracleResultSet rs = null;
             }
         });
         jPanel3.add(jButton1);
-        jButton1.setBounds(440, 360, 140, 60);
+        jButton1.setBounds(430, 360, 140, 60);
         jPanel3.add(jLabel8);
         jLabel8.setBounds(570, 100, 0, 0);
 
@@ -289,7 +288,7 @@ OracleResultSet rs = null;
              rs= (OracleResultSet) pst.executeQuery();
              if(rs.next()){
              JOptionPane.showMessageDialog(null," username and pasword est valide ..!! ");
-              Admin a= new Admin();
+              AAdmin a= new AAdmin();
                  a.setVisible(true);
              }else{
                        JOptionPane.showMessageDialog(null," username and pasword invalide ..!! ");

@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package app;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -14,15 +15,16 @@ import javax.swing.JOptionPane;
  *
  * @author 212649567694
  */
-public class etudiant extends javax.swing.JFrame {
-Connection conn;
+public class AAdmin extends javax.swing.JFrame {
+ Connection conn;
                PreparedStatement ps = null;
 
     /**
-     * Creates new form etudiant
+     * Creates new form AAdmin
      */
-    public etudiant() {
+    public AAdmin() {
         initComponents();
+         connectionDB();
     }
 void connectionDB() {
     try{
@@ -55,24 +57,26 @@ void connectionDB() {
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        Adress = new javax.swing.JTextField();
-        Filiére = new javax.swing.JTextField();
-        DN = new javax.swing.JTextField();
         Id = new javax.swing.JTextField();
         Nom = new javax.swing.JTextField();
-        Num_tel = new javax.swing.JTextField();
         Prenom = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        Quitter = new javax.swing.JButton();
         Age = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        Num_tel = new javax.swing.JTextField();
+        Adress = new javax.swing.JTextField();
+        DN = new javax.swing.JTextField();
+        Filiére = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        Quitter = new javax.swing.JButton();
+        Supprimer = new javax.swing.JButton();
+        Ajouter = new javax.swing.JButton();
+        Modifier = new javax.swing.JButton();
         Retour = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -97,16 +101,16 @@ void connectionDB() {
         jLabel11.setBackground(new java.awt.Color(52, 183, 241));
         jLabel11.setFont(new java.awt.Font("Ebrima", 2, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Inscrivez-Vous");
+        jLabel11.setText("Gestion des étudiant");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(23, 23, 23)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 760, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 773, Short.MAX_VALUE)
                 .addComponent(jLabel5)
                 .addContainerGap())
         );
@@ -122,77 +126,47 @@ void connectionDB() {
         );
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 1040, 100);
-
-        jLabel2.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
-        jLabel2.setText("Nom");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 230, 40, 20);
-
-        jLabel3.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
-        jLabel3.setText("Prenom");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(0, 290, 80, 30);
-
-        jLabel6.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
-        jLabel6.setText("Adress");
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(450, 230, 90, 20);
-
-        jLabel7.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
-        jLabel7.setText("Id ");
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(10, 170, 40, 20);
-
-        jLabel8.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
-        jLabel8.setText("Date De Naissance");
-        jPanel1.add(jLabel8);
-        jLabel8.setBounds(450, 290, 200, 20);
-
-        jLabel9.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
-        jLabel9.setText("Filiére");
-        jPanel1.add(jLabel9);
-        jLabel9.setBounds(450, 340, 90, 50);
-
-        jLabel10.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
-        jLabel10.setText("Num tél");
-        jPanel1.add(jLabel10);
-        jLabel10.setBounds(460, 160, 90, 20);
-
-        Adress.setForeground(new java.awt.Color(51, 51, 51));
-        Adress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jPanel1.add(Adress);
-        Adress.setBounds(670, 210, 320, 40);
-
-        Filiére.setForeground(new java.awt.Color(51, 51, 51));
-        Filiére.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        Filiére.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FiliéreActionPerformed(evt);
-            }
-        });
-        jPanel1.add(Filiére);
-        Filiére.setBounds(670, 340, 320, 40);
-
-        DN.setForeground(new java.awt.Color(51, 51, 51));
-        DN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jPanel1.add(DN);
-        DN.setBounds(670, 280, 320, 40);
+        jPanel2.setBounds(0, 0, 1050, 100);
 
         Id.setForeground(new java.awt.Color(51, 51, 51));
         Id.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        Id.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                IdActionPerformed(evt);
-            }
-        });
         jPanel1.add(Id);
-        Id.setBounds(110, 150, 320, 40);
+        Id.setBounds(120, 190, 320, 40);
 
         Nom.setForeground(new java.awt.Color(51, 51, 51));
         Nom.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         jPanel1.add(Nom);
-        Nom.setBounds(110, 220, 320, 40);
+        Nom.setBounds(120, 260, 320, 40);
+
+        Prenom.setForeground(new java.awt.Color(51, 51, 51));
+        Prenom.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jPanel1.add(Prenom);
+        Prenom.setBounds(120, 320, 320, 40);
+
+        Age.setForeground(new java.awt.Color(51, 51, 51));
+        Age.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jPanel1.add(Age);
+        Age.setBounds(120, 380, 320, 40);
+
+        jLabel7.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        jLabel7.setText("Id ");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(10, 200, 40, 20);
+
+        jLabel2.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        jLabel2.setText("Nom");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(10, 270, 40, 20);
+
+        jLabel3.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        jLabel3.setText("Prenom");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(0, 330, 80, 30);
+
+        jLabel4.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        jLabel4.setText("Age");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(10, 390, 40, 20);
 
         Num_tel.setForeground(new java.awt.Color(51, 51, 51));
         Num_tel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
@@ -202,25 +176,47 @@ void connectionDB() {
             }
         });
         jPanel1.add(Num_tel);
-        Num_tel.setBounds(670, 150, 320, 40);
+        Num_tel.setBounds(670, 180, 320, 40);
 
-        Prenom.setForeground(new java.awt.Color(51, 51, 51));
-        Prenom.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jPanel1.add(Prenom);
-        Prenom.setBounds(110, 280, 320, 40);
+        Adress.setForeground(new java.awt.Color(51, 51, 51));
+        Adress.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jPanel1.add(Adress);
+        Adress.setBounds(670, 250, 320, 40);
 
-        jButton1.setBackground(new java.awt.Color(52, 183, 241));
-        jButton1.setFont(new java.awt.Font("Courier New", 2, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(51, 51, 51));
-        jButton1.setText("S'incrire");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        DN.setForeground(new java.awt.Color(51, 51, 51));
+        DN.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        jPanel1.add(DN);
+        DN.setBounds(670, 320, 320, 40);
+
+        Filiére.setForeground(new java.awt.Color(51, 51, 51));
+        Filiére.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        Filiére.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                FiliéreActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(80, 460, 270, 60);
+        jPanel1.add(Filiére);
+        Filiére.setBounds(670, 380, 320, 40);
+
+        jLabel10.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        jLabel10.setText("Num tél");
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(450, 200, 90, 20);
+
+        jLabel6.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        jLabel6.setText("Adress");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(450, 270, 90, 20);
+
+        jLabel8.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        jLabel8.setText("Date De Naissance");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(450, 330, 200, 20);
+
+        jLabel9.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
+        jLabel9.setText("Filiére");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(450, 380, 90, 50);
 
         Quitter.setBackground(new java.awt.Color(52, 183, 241));
         Quitter.setFont(new java.awt.Font("Courier New", 2, 18)); // NOI18N
@@ -233,17 +229,46 @@ void connectionDB() {
             }
         });
         jPanel1.add(Quitter);
-        Quitter.setBounds(430, 460, 250, 60);
+        Quitter.setBounds(630, 480, 190, 60);
 
-        Age.setForeground(new java.awt.Color(51, 51, 51));
-        Age.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
-        jPanel1.add(Age);
-        Age.setBounds(110, 340, 320, 40);
+        Supprimer.setBackground(new java.awt.Color(52, 183, 241));
+        Supprimer.setFont(new java.awt.Font("Courier New", 2, 18)); // NOI18N
+        Supprimer.setForeground(new java.awt.Color(51, 51, 51));
+        Supprimer.setText("Supprimer");
+        Supprimer.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Supprimer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SupprimerActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Supprimer);
+        Supprimer.setBounds(420, 480, 180, 60);
 
-        jLabel16.setFont(new java.awt.Font("Courier New", 0, 18)); // NOI18N
-        jLabel16.setText("Age");
-        jPanel1.add(jLabel16);
-        jLabel16.setBounds(10, 350, 40, 20);
+        Ajouter.setBackground(new java.awt.Color(52, 183, 241));
+        Ajouter.setFont(new java.awt.Font("Courier New", 2, 18)); // NOI18N
+        Ajouter.setForeground(new java.awt.Color(51, 51, 51));
+        Ajouter.setText("Ajouter");
+        Ajouter.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Ajouter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AjouterActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Ajouter);
+        Ajouter.setBounds(20, 480, 170, 60);
+
+        Modifier.setBackground(new java.awt.Color(52, 183, 241));
+        Modifier.setFont(new java.awt.Font("Courier New", 2, 18)); // NOI18N
+        Modifier.setForeground(new java.awt.Color(51, 51, 51));
+        Modifier.setText("Modifier");
+        Modifier.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        Modifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModifierActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Modifier);
+        Modifier.setBounds(220, 480, 180, 60);
 
         Retour.setBackground(new java.awt.Color(52, 183, 241));
         Retour.setFont(new java.awt.Font("Courier New", 2, 18)); // NOI18N
@@ -256,20 +281,20 @@ void connectionDB() {
             }
         });
         jPanel1.add(Retour);
-        Retour.setBounds(760, 460, 230, 60);
+        Retour.setBounds(850, 480, 170, 60);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1036, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1045, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 595, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
         );
 
-        setBounds(0, 0, 1036, 595);
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
@@ -277,11 +302,38 @@ void connectionDB() {
         System.exit(0);
     }//GEN-LAST:event_jLabel5MouseClicked
 
+    private void Num_telActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Num_telActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Num_telActionPerformed
+
     private void FiliéreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FiliéreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FiliéreActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void QuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitterActionPerformed
+        // TODO add your handling code here:
+      dispose();
+    }//GEN-LAST:event_QuitterActionPerformed
+
+    private void SupprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SupprimerActionPerformed
+        // TODO add your handling code here:
+        String id_s=Id.getText();
+             int id_no= Integer.parseInt(id_s);
+        connectionDB();
+        String sql ="delete from student1 where id_s=?";
+        try{
+           ps = conn.prepareStatement(sql);
+           ps.setInt(1,id_no);
+           ps.executeUpdate();
+             JOptionPane.showMessageDialog(null,"delete réussi...!!");
+             Id.setText("");
+           conn.close();
+        }catch(SQLException e){
+            System.out.println("error delete:"+e);
+        }
+    }//GEN-LAST:event_SupprimerActionPerformed
+
+    private void AjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AjouterActionPerformed
         // TODO add your handling code here:
          String id_s = Id.getText();
                 int id_no= Integer.parseInt(id_s);
@@ -292,11 +344,6 @@ void connectionDB() {
                    String num_tel = Num_tel.getText();
                     int numtel_no= Integer.parseInt(num_tel);
                         String adresse = Adress.getText();
-                        
-                        
-                        
-                        
-                        
                             String Date_naissance = DN.getText();
                                String filiere = Filiére.getText();
                         connectionDB();
@@ -318,27 +365,56 @@ void connectionDB() {
                  }catch(SQLException e){
                      System.out.print("error in sql"+e);
                  }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_AjouterActionPerformed
 
-    private void Num_telActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Num_telActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Num_telActionPerformed
-
-    private void QuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_QuitterActionPerformed
-        // TODO add your handling code here:
-        dispose();
-    }//GEN-LAST:event_QuitterActionPerformed
+    private void ModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifierActionPerformed
+        // TODO add your handling code here
+         String id_s = Id.getText();
+                int id_no= Integer.parseInt(id_s);
+                String nom = Nom.getText();
+                String prenom = Prenom.getText();
+                String age = Age.getText();
+                    int age_no= Integer.parseInt(age);
+                   String num_tel = Num_tel.getText();
+                    int numtel_no= Integer.parseInt(num_tel);
+                        String adresse = Adress.getText();
+                            String Date_naissance = DN.getText();
+                               String filiere = Filiére.getText();
+                  connectionDB();
+                  
+                  String sql ="update student1 set nom=?, prenom=?,age=?,num_tel=?,adresse=?,Date_naissance=?,filiere=? where id_s=?";
+                  try{
+                        ps = conn.prepareStatement(sql);
+                        ps.setString(1,nom);
+                         ps.setString(2,nom);
+                        ps.setInt(3, age_no);
+                            ps.setInt(4, numtel_no);
+                             ps.setString(5,nom);
+                              ps.setString(6,nom);
+                               ps.setString(7,nom);
+                               ps.setInt(8,id_no);
+                               ps.executeUpdate();
+                               JOptionPane.showMessageDialog(null,"Update réussi");
+                               Id.setText("");
+                               Prenom.setText("");
+                                Age.setText("");
+                                 Num_tel.setText("");
+                                  Adress.setText("");
+                                   DN.setText("");
+                                    Filiére.setText("");
+                                         
+                       conn.close();
+                  }catch(SQLException e){
+                      System.out.print("error in sql"+e);
+                  }
+    }//GEN-LAST:event_ModifierActionPerformed
 
     private void RetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourActionPerformed
         // TODO add your handling code here:
         this.hide();
-        choisir c =new choisir(); 
+        choisir c =new choisir();
         c.setVisible(true);
     }//GEN-LAST:event_RetourActionPerformed
-
-    private void IdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_IdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -357,20 +433,20 @@ void connectionDB() {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(etudiant.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(etudiant.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(etudiant.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(etudiant.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AAdmin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new etudiant().setVisible(true);
+                new AAdmin().setVisible(true);
             }
         });
     }
@@ -378,20 +454,22 @@ void connectionDB() {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Adress;
     private javax.swing.JTextField Age;
+    private javax.swing.JButton Ajouter;
     private javax.swing.JTextField DN;
     private javax.swing.JTextField Filiére;
     private javax.swing.JTextField Id;
+    private javax.swing.JButton Modifier;
     private javax.swing.JTextField Nom;
     private javax.swing.JTextField Num_tel;
     private javax.swing.JTextField Prenom;
     private javax.swing.JButton Quitter;
     private javax.swing.JButton Retour;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Supprimer;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
